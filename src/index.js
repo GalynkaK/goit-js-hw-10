@@ -1,22 +1,23 @@
 import './css/styles.css';
-import { Notify } from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import debounce from 'lodash.debounce';
-import fetchCountries from './fetchCountries';
+import { fetchCountries } from './fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 const searchBox = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
-const countryInfo = document.querySelector('.country - info');
+const countryInfo = document.querySelector('.country-info');
+const body = document.querySelector('body');
 
-searchBox.addEventListener('input', debounce(searchBox, DEBOUNCE_DELAY));
+document.body.style.background = 'linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 1200px 1200px no-repeat';
+searchBox.addEventListener('input', debounce(inputCountry, DEBOUNCE_DELAY));
 
-function searchBox(e) {
-  const countryName = e.target.value.trim();
-  if (countryName === "") {
+function inputCountry(e) {
+  const сountryName = e.target.value.trim();
+  if (сountryName === "") {
     return;
   }
-
-  fetchCountries(countryName)
+  fetchCountries(сountryName)
     .then(response => {
       if (response.length > 10) {
         Notify.info(
