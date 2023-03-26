@@ -9,7 +9,7 @@ const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 const body = document.querySelector('body');
 
-document.body.style.background = 'linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 100% no-repeat';
+document.body.style.background = 'linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) 100% ';
 searchBox.addEventListener('input', debounce(inputCountry, DEBOUNCE_DELAY));
 
 function inputCountry(e) {
